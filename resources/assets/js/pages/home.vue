@@ -1,20 +1,24 @@
-<template>
-  <v-card>
-    <v-card-title class="grey lighten-4">
-      <h3 class="headline mb-0">{{ $t('home') }}</h3>
-    </v-card-title>
-    <v-divider></v-divider>
-    <v-card-text>
-      {{ $t('you_are_logged_in') }}
-    </v-card-text>
-  </v-card>
+<template lang="pug">
+  v-card
+    v-card-title.grey.lighten-4
+      h3.headline.mb-0 {{ $t('Dashboard') }}
+    v-divider
+    v-card-text
+      v-alert(v-model="alert",
+      dismissible,
+      type="success") test
 </template>
 
 <script>
 export default {
   name: 'home-view',
+  data(){
+    return {
+      alert:true
+    }
+  },
   metaInfo () {
-    return { title: this.$t('home') }
+    return { title: this.$t('Dashboard') }
   }
 }
 </script>

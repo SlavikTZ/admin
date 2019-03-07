@@ -44,7 +44,7 @@
                         data-vv-as='password',
                         hide-icon='true',
                         name='password_confirmation',
-                        v-validate="'required|confirmed:password'")
+                        v-validate="'required'")
 
                     v-card-actions
                         submit-button(:form='form', :label="$t('register')")

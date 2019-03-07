@@ -1,5 +1,5 @@
 <template lang="pug">
-    v-layout(row='')
+    v-layout(row)
         v-flex(xs12='', sm8='', offset-sm2='', lg4='', offset-lg4='')
             v-card
                 progress-bar(:show='busy')
@@ -8,9 +8,19 @@
                         h3.headline.mb-0 {{ $t('login') }}
                     v-card-text
                         // Email
-                        email-input(:form='form', :label="$t('email')", :v-errors='errors', :value.sync='form.email', name='email', prepend='person_outline', v-validate="'required|email'")
+                        email-input(:form='form',
+                        :label="$t('email')",
+                        :v-errors='errors',
+                        :value.sync='form.email',
+                        name='email',
+                        prepend='person_outline',
+                        v-validate="'required|email'")
                         // Password
-                        password-input(:v-errors='errors', :form='form', :value.sync='form.password', prepend='lock_outline', v-validate="'required|min:8'")
+                        password-input(:v-errors='errors',
+                        :form='form',
+                        :value.sync='form.password',
+                        prepend='lock_outline',
+                        v-validate="'required|min:8'")
                         // Remember Me
                         v-checkbox(:label="$t('remember_me')", color='primary', type='checkbox', v-model='remember', value='true')
                         submit-button(:block='true', :form='form', :label="$t('login')")
